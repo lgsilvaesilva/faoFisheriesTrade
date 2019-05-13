@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="sec-intro.html">
-<link rel="next" href="outlier-correction.html">
+<link rel="next" href="outlier-detection.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -112,15 +112,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2" data-path="sec-workflow.html"><a href="sec-workflow.html"><i class="fa fa-check"></i><b>2</b> Trade data Workflow</a><ul>
 <li class="chapter" data-level="2.1" data-path="sec-workflow.html"><a href="sec-workflow.html#get-started-data"><i class="fa fa-check"></i><b>2.1</b> Get started data</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="outlier-correction.html"><a href="outlier-correction.html"><i class="fa fa-check"></i><b>3</b> Outlier correction</a><ul>
-<li class="chapter" data-level="3.1" data-path="outlier-correction.html"><a href="outlier-correction.html#data"><i class="fa fa-check"></i><b>3.1</b> Data</a></li>
-<li class="chapter" data-level="3.2" data-path="outlier-correction.html"><a href="outlier-correction.html#outlier-detection-in-the-aggregated-level"><i class="fa fa-check"></i><b>3.2</b> Outlier detection in the aggregated level</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="outlier-correction.html"><a href="outlier-correction.html#boxplot"><i class="fa fa-check"></i><b>3.2.1</b> Boxplot</a></li>
-<li class="chapter" data-level="3.2.2" data-path="outlier-correction.html"><a href="outlier-correction.html#median-absolute-deviation-mad"><i class="fa fa-check"></i><b>3.2.2</b> Median Absolute Deviation (MAD)</a></li>
+<li class="chapter" data-level="3" data-path="outlier-detection.html"><a href="outlier-detection.html"><i class="fa fa-check"></i><b>3</b> Outlier Detection</a><ul>
+<li class="chapter" data-level="3.1" data-path="outlier-detection.html"><a href="outlier-detection.html#data"><i class="fa fa-check"></i><b>3.1</b> Data</a></li>
+<li class="chapter" data-level="3.2" data-path="outlier-detection.html"><a href="outlier-detection.html#outlier-detection-in-the-aggregated-level"><i class="fa fa-check"></i><b>3.2</b> Outlier detection in the aggregated level</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="outlier-detection.html"><a href="outlier-detection.html#boxplot"><i class="fa fa-check"></i><b>3.2.1</b> Boxplot</a></li>
+<li class="chapter" data-level="3.2.2" data-path="outlier-detection.html"><a href="outlier-detection.html#median-absolute-deviation-mad"><i class="fa fa-check"></i><b>3.2.2</b> Median Absolute Deviation (MAD)</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="outlier-correction.html"><a href="outlier-correction.html#correction-of-main-outlier"><i class="fa fa-check"></i><b>3.3</b> Correction of main outlier</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="outlier-correction.html"><a href="outlier-correction.html#locally-estimated-scatterplot-smoothing-loess"><i class="fa fa-check"></i><b>3.3.1</b> Locally Estimated Scatterplot Smoothing (LOESS)</a></li>
-<li class="chapter" data-level="3.3.2" data-path="outlier-correction.html"><a href="outlier-correction.html#median-weighted-average"><i class="fa fa-check"></i><b>3.3.2</b> Median weighted average</a></li>
+<li class="chapter" data-level="3.3" data-path="outlier-detection.html"><a href="outlier-detection.html#correction-of-main-outlier"><i class="fa fa-check"></i><b>3.3</b> Correction of main outlier</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="outlier-detection.html"><a href="outlier-detection.html#locally-estimated-scatterplot-smoothing-loess"><i class="fa fa-check"></i><b>3.3.1</b> Locally Estimated Scatterplot Smoothing (LOESS)</a></li>
+<li class="chapter" data-level="3.3.2" data-path="outlier-detection.html"><a href="outlier-detection.html#median-weighted-average"><i class="fa fa-check"></i><b>3.3.2</b> Median weighted average</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -174,7 +174,7 @@ tldata &lt;-<span class="st"> </span>tldata[<span class="kw">substr</span>(hs, <
         </div>
       </div>
 <a href="sec-intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="outlier-correction.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="outlier-detection.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
