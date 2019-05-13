@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 1 Introduction | Fishery: Trade Module</title>
+  <title>Chapter 2 Trade data Workflow | Fishery: Trade Module</title>
   <meta name="description" content="Fisheries Trade Documentation">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 1 Introduction | Fishery: Trade Module" />
+  <meta property="og:title" content="Chapter 2 Trade data Workflow | Fishery: Trade Module" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Introduction | Fishery: Trade Module" />
+  <meta name="twitter:title" content="Chapter 2 Trade data Workflow | Fishery: Trade Module" />
   
   <meta name="twitter:description" content="Fisheries Trade Documentation" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="sec-workflow.html">
+<link rel="prev" href="sec-intro.html">
+<link rel="next" href="outlier-correction.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -140,18 +140,41 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="sec:intro" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>TODO</p>
+<div id="sec:workflow" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Trade data Workflow</h1>
+<p>In this section, we show the fisheries trade workflow passing by the mapping commodities, outlier detection, and correction of the main outliers. The idea is show the methodology applied in each step using a small example.</p>
+<div id="get-started-data" class="section level2">
+<h2><span class="header-section-number">2.1</span> Get started data</h2>
+<p>we selected the country Brazil to show the R module steps. First we get the data from <code>Tariff Line</code> source, and filter only the valid commodities. In this case, we remove the commodities that HS code start with <code>0301</code>. This removing rule was determined by the fishery team.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">no_imputation &lt;-<span class="st"> &quot;0301&quot;</span>; REPORTER &lt;-<span class="st"> &quot;76&quot;</span>
+<span class="kw">get_working_data</span>(<span class="dt">.reporter =</span> REPORTER, <span class="dt">.local =</span> <span class="ot">TRUE</span>)
+tldata &lt;-<span class="st"> </span>tldata[<span class="kw">substr</span>(hs, <span class="dv">1</span>, <span class="dv">4</span>) <span class="op">!=</span><span class="st"> </span>no_imputation]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(tldata)</code></pre></div>
+<pre><code>##    year reporter partner flow           hs hsrep  value weight    qty
+## 1: 2000       76      56    2 030629000000    H1    399     NA     NA
+## 2: 2000       76      32    1 210390110000    H1 268359 197636 197636
+## 3: 2000       76      32    1 210390110000    H1 310331 228406 228406
+## 4: 2000       76      32    1 210390110000    H1 104457  83355  83355
+## 5: 2000       76      32    1 210390110000    H1 294883 247896 247896
+## 6: 2000       76      32    1 210390110000    H1 244719 210526 210526
+##    qunit hslength  src
+## 1:     1        8 unsd
+## 2:     8        8 unsd
+## 3:     8        8 unsd
+## 4:     8        8 unsd
+## 5:     8        8 unsd
+## 6:     8        8 unsd</code></pre>
+<p>There are many methods for outlier detection, for instance, model-based, quantiles methods, and deviation from average. However, in this task, we are manipulating the massive amount of heterogeneous data grouped in country and commodity class. Therefore, a general and straightforward method can be an excellent choice to perform outlier detection. Given this scenario, the Median Absolute Deviation (MAD) was adopted and applied for each commodity per year. The main idea of this strategy is to find outliers that are away from its median when compared in the same commodity.</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sec-workflow.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="sec-intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="outlier-correction.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
