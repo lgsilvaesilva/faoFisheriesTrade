@@ -7,6 +7,7 @@ output: bookdown::gitbook
 documentclass: book
 css: ess.css
 link-citations: yes
+cover-image: "img/cover.svg"
 description: "Fisheries Trade Documentation"
 ---
 
@@ -21,5 +22,9 @@ knitr::opts_chunk$set(
 # Welcome {-}
 
 <center>
-<img src="img/work-progress.jpg" alt="work-progress" width="200"/>
+<img src="img/cover.svg" alt="cover" width="60%"/>
+</center>
+
+<center>
+<img src="img/work-progress.jpg" alt="work-progress" width="30%"/>
 </center>

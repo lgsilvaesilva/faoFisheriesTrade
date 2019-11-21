@@ -2,10 +2,12 @@ book_filename: "bookdown-FisheriesTrade"
 language:
   ui:
     chapter_name: "Chapter "
-output_dir: "../docs"    
+output_dir: "/Users/lgsilvaesilva/Dropbox/projetos/FAO/FisheriesTrade/doc/faoFisheriesTrade/docs/"    
 delete_merged_file: true
 rmd_files: ["index.Rmd", 
             "sec/01-intro.Rmd", 
+            #"sec/02-workflow.Rmd", 
             "sec/03-mapping.Rmd",
             "sec/04-missing-data.Rmd",
-            "sec/05-outlier-method.Rmd"]
+            "sec/05-outlier-method.Rmd",
+            "sec/06-mirroring.Rmd"]
