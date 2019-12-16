@@ -45,12 +45,13 @@
 
 
 
-<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.4/datatables.js"></script>
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="libs/datatables-binding-0.10/datatables.js"></script>
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
 <link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
@@ -70,21 +71,28 @@
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li><a href="migration-actors.html#migration-actors"><strong>Migration actors</strong></a></li>
 <li class="chapter" data-level="1" data-path="sec-intro.html"><a href="sec-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="sec-mapping.html"><a href="sec-mapping.html"><i class="fa fa-check"></i><b>2</b> Mapping trade data</a></li>
-<li class="chapter" data-level="3" data-path="sec-missing.html"><a href="sec-missing.html"><i class="fa fa-check"></i><b>3</b> Missing data and imputation</a></li>
-<li class="chapter" data-level="4" data-path="outlier-detection.html"><a href="outlier-detection.html"><i class="fa fa-check"></i><b>4</b> Outlier Detection</a><ul>
-<li class="chapter" data-level="4.1" data-path="outlier-detection.html"><a href="outlier-detection.html#data"><i class="fa fa-check"></i><b>4.1</b> Data</a></li>
-<li class="chapter" data-level="4.2" data-path="outlier-detection.html"><a href="outlier-detection.html#outlier-detection-in-the-aggregated-level"><i class="fa fa-check"></i><b>4.2</b> Outlier detection in the aggregated level</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="outlier-detection.html"><a href="outlier-detection.html#boxplot"><i class="fa fa-check"></i><b>4.2.1</b> Boxplot</a></li>
-<li class="chapter" data-level="4.2.2" data-path="outlier-detection.html"><a href="outlier-detection.html#median-absolute-deviation-mad"><i class="fa fa-check"></i><b>4.2.2</b> Median Absolute Deviation (MAD)</a></li>
+<li class="chapter" data-level="2" data-path="sec-data.html"><a href="sec-data.html"><i class="fa fa-check"></i><b>2</b> Data</a><ul>
+<li class="chapter" data-level="2.1" data-path="sec-data.html"><a href="sec-data.html#unsd---comtrade"><i class="fa fa-check"></i><b>2.1</b> UNSD - COMTRADE</a></li>
+<li class="chapter" data-level="2.2" data-path="sec-data.html"><a href="sec-data.html#eurostat"><i class="fa fa-check"></i><b>2.2</b> Eurostat</a></li>
+<li class="chapter" data-level="2.3" data-path="sec-data.html"><a href="sec-data.html#tdm-and-other-sources"><i class="fa fa-check"></i><b>2.3</b> TDM and other sources</a></li>
+<li class="chapter" data-level="2.4" data-path="sec-data.html"><a href="sec-data.html#data-builder"><i class="fa fa-check"></i><b>2.4</b> Data Builder</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="outlier-detection.html"><a href="outlier-detection.html#correction-of-main-outlier"><i class="fa fa-check"></i><b>4.3</b> Correction of main outlier</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="outlier-detection.html"><a href="outlier-detection.html#locally-estimated-scatterplot-smoothing-loess"><i class="fa fa-check"></i><b>4.3.1</b> Locally Estimated Scatterplot Smoothing (LOESS)</a></li>
-<li class="chapter" data-level="4.3.2" data-path="outlier-detection.html"><a href="outlier-detection.html#median-weighted-average"><i class="fa fa-check"></i><b>4.3.2</b> Median weighted average</a></li>
+<li class="chapter" data-level="3" data-path="sec-mapping.html"><a href="sec-mapping.html"><i class="fa fa-check"></i><b>3</b> Mapping trade data</a></li>
+<li class="chapter" data-level="4" data-path="sec-missing.html"><a href="sec-missing.html"><i class="fa fa-check"></i><b>4</b> Missing data and imputation</a></li>
+<li class="chapter" data-level="5" data-path="outlier-detection.html"><a href="outlier-detection.html"><i class="fa fa-check"></i><b>5</b> Outlier Detection</a><ul>
+<li class="chapter" data-level="5.1" data-path="outlier-detection.html"><a href="outlier-detection.html#data"><i class="fa fa-check"></i><b>5.1</b> Data</a></li>
+<li class="chapter" data-level="5.2" data-path="outlier-detection.html"><a href="outlier-detection.html#outlier-detection-in-the-aggregated-level"><i class="fa fa-check"></i><b>5.2</b> Outlier detection in the aggregated level</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="outlier-detection.html"><a href="outlier-detection.html#boxplot"><i class="fa fa-check"></i><b>5.2.1</b> Boxplot</a></li>
+<li class="chapter" data-level="5.2.2" data-path="outlier-detection.html"><a href="outlier-detection.html#median-absolute-deviation-mad"><i class="fa fa-check"></i><b>5.2.2</b> Median Absolute Deviation (MAD)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="outlier-detection.html"><a href="outlier-detection.html#correction-of-main-outlier"><i class="fa fa-check"></i><b>5.3</b> Correction of main outlier</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="outlier-detection.html"><a href="outlier-detection.html#locally-estimated-scatterplot-smoothing-loess"><i class="fa fa-check"></i><b>5.3.1</b> Locally Estimated Scatterplot Smoothing (LOESS)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="outlier-detection.html"><a href="outlier-detection.html#median-weighted-average"><i class="fa fa-check"></i><b>5.3.2</b> Median weighted average</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="sec-mirroring.html"><a href="sec-mirroring.html"><i class="fa fa-check"></i><b>5</b> Trade partners</a></li>
+<li class="chapter" data-level="6" data-path="sec-mirroring.html"><a href="sec-mirroring.html"><i class="fa fa-check"></i><b>6</b> Trade partners</a></li>
 </ul>
 
       </nav>
@@ -103,9 +111,9 @@
 
             <section class="normal" id="section-">
 <div id="outlier-detection" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Outlier Detection</h1>
+<h1><span class="header-section-number">5</span> Outlier Detection</h1>
 <div id="data" class="section level2">
-<h2><span class="header-section-number">4.1</span> Data</h2>
+<h2><span class="header-section-number">5.1</span> Data</h2>
 <p>The outlier detection methods are applied in the unit value (uv) variable, which is the ratio between the monetary transaction value and its weight. In this first step of this procedure, we attempt to figure out outliers in the aggregate level, and then we try to fix the transactions (disaggregated level) that were responsible for generating the outliers detected.</p>
 <p>The aggregated level means to compute the unit value by reporter, flow, and FAO code, i.e., for each combination of reporter, flow, and FAO code we calculate the ratio between the summing of the monetary value and the summing of the weight. For instance, in Table 1 is shown a subset from the full data using the following parameters:</p>
 <ul>
@@ -115,7 +123,7 @@
 <li><code>faocode</code>: 292.9.1.90</li>
 </ul>
 <div id="htmlwidget-6f56affb96726fa3baea" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6f56affb96726fa3baea">{"x":{"filter":"none","caption":"<caption>Table 1: Imports of the commodity (FAOCODE) 292.9.1.90 for the year 2005, and reporter 76 (Brazil).<\/caption>","data":[[76,76,76,76,76,76,76,76,76,76,76,76],[1,1,1,1,1,1,1,1,1,1,1,1],[2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005],["292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90"],[152,158,250,276,352,360,372,392,410,608,840,1248],[65438,1910,25862,19187,9160,1115712,4386,58248,71675,39387,44329,438234],[73173,613,11097,2250,7565,1505700,1000,13282,19883,71300.4324035991,5949,93719],[0.894291610293414,3.11582381729201,2.33053978552762,8.52755555555555,1.21083939193655,0.740992229527794,4.386,4.38548411383828,3.60483830407886,0.552408992094862,7.45150445453017,4.6760422112912]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>reporter<\/th>\n      <th>flow<\/th>\n      <th>year<\/th>\n      <th>faocode<\/th>\n      <th>partner<\/th>\n      <th>value<\/th>\n      <th>weight<\/th>\n      <th>uv<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":[0,1,2,4,5,6,7]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nDTWidget.formatRound(this, row, data, 6, 2, 3, ',', '.');\nDTWidget.formatRound(this, row, data, 7, 2, 3, ',', '.');\nDTWidget.formatCurrency(this, row, data, 5, '$', 0, 3, ',', '.', true);\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-6f56affb96726fa3baea">{"x":{"filter":"none","caption":"<caption>Table 1: Imports of the commodity (FAOCODE) 292.9.1.90 for the year 2005, and reporter 76 (Brazil).<\/caption>","data":[[76,76,76,76,76,76,76,76,76,76,76,76],[1,1,1,1,1,1,1,1,1,1,1,1],[2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005],["292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90"],[152,158,250,276,352,360,372,392,410,608,840,1248],[65438,1910,25862,19187,9160,1115712,4386,58248,71675,39387,44329,438234],[73173,613,11097,2250,7565,1505700,1000,13282,19883,71300.4324035991,5949,93719],[0.894291610293414,3.11582381729201,2.33053978552762,8.52755555555555,1.21083939193655,0.740992229527794,4.386,4.38548411383828,3.60483830407886,0.552408992094862,7.45150445453017,4.6760422112912]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>reporter<\/th>\n      <th>flow<\/th>\n      <th>year<\/th>\n      <th>faocode<\/th>\n      <th>partner<\/th>\n      <th>value<\/th>\n      <th>weight<\/th>\n      <th>uv<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":[0,1,2,4,5,6,7]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nDTWidget.formatCurrency(this, row, data, 5, \"$\", 0, 3, \",\", \".\", true);\nDTWidget.formatRound(this, row, data, 6, 2, 3, \",\", \".\");\nDTWidget.formatRound(this, row, data, 7, 2, 3, \",\", \".\");\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p>To calculate the unit value in the aggregate level, it is needed to apply the equation below:</p>
 <p><span class="math display">\[uv = \frac{\sum_{p = 1}^{P} value_p}{\sum_{p = 1}^{P} weight_p}\]</span>
 where <span class="math inline">\(value_p\)</span> is the monetary value from the p-th partner, as well as <span class="math inline">\(weight_p\)</span> is the transaction weight, <span class="math inline">\(P\)</span> is the total of partners in this given combination, in this small example <span class="math inline">\(P = 12\)</span>. In order to make this report comprehensible, we show the <code>uv</code> calculation step-by-step as following:</p>
@@ -126,14 +134,14 @@ uv  &amp; = \frac{65438+1910 + \cdots + 44329+438234}{73173+613 + \cdots + 5949+
 \end{align}\]</span></p>
 <p>If we repeat it procedure for all available year for this combination, we will find the values shown in Table 2. The highlighted row shows the <code>uv</code> computed previously, as shown in the equations sequence.</p>
 <div id="htmlwidget-92d72abcaf15ea31dc25" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-92d72abcaf15ea31dc25">{"x":{"filter":"none","caption":"<caption>Table 2: Data aggregation by reporter, flow, and year.<\/caption>","data":[[76,76,76,76,76,76,76,76,76,76,76,76,76],[1,1,1,1,1,1,1,1,1,1,1,1,1],[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012],["292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90"],[2061265,1165355,1467727,1835708,1948360,1893528,2119873,2335584,3375543,3807503,4541085,7303096,32890],[1692078,809005,1224772.63025677,1652935.19460362,1735583.36061187,1805531.4324036,1816387.09460859,1966138.34623177,2086388.07259209,2129944.07628759,2172187,3076390.53723858,2820],[1.21818556827759,1.44047935426852,1.19836691622697,1.11057469524098,1.12259661173124,1.04873721166917,1.1670821744397,1.1879042003714,1.61788837098091,1.78760702799124,2.09055896200465,2.37391706663985,11.6631205673759]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>reporter<\/th>\n      <th>flow<\/th>\n      <th>year<\/th>\n      <th>faocode<\/th>\n      <th>value<\/th>\n      <th>weight<\/th>\n      <th>uv<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":13,"columnDefs":[{"className":"dt-right","targets":[0,1,2,4,5,6]}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,13,25,50,100],"rowCallback":"function(row, data) {\nvar value=data[2]; $(row).css({'color':value == '2005' ? '#DDDDDD' : '','background-color':value == '2005' ? '#3B556E' : ''});\nDTWidget.formatRound(this, row, data, 5, 2, 3, ',', '.');\nDTWidget.formatRound(this, row, data, 6, 2, 3, ',', '.');\nDTWidget.formatCurrency(this, row, data, 4, '$', 0, 3, ',', '.', true);\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-92d72abcaf15ea31dc25">{"x":{"filter":"none","caption":"<caption>Table 2: Data aggregation by reporter, flow, and year.<\/caption>","data":[[76,76,76,76,76,76,76,76,76,76,76,76,76],[1,1,1,1,1,1,1,1,1,1,1,1,1],[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012],["292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90","292.9.1.90"],[2061265,1165355,1467727,1835708,1948360,1893528,2119873,2335584,3375543,3807503,4541085,7303096,32890],[1692078,809005,1224772.63025677,1652935.19460362,1735583.36061187,1805531.4324036,1816387.09460859,1966138.34623177,2086388.07259209,2129944.07628759,2172187,3076390.53723858,2820],[1.21818556827759,1.44047935426852,1.19836691622697,1.11057469524098,1.12259661173124,1.04873721166917,1.1670821744397,1.1879042003714,1.61788837098091,1.78760702799124,2.09055896200465,2.37391706663985,11.6631205673759]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>reporter<\/th>\n      <th>flow<\/th>\n      <th>year<\/th>\n      <th>faocode<\/th>\n      <th>value<\/th>\n      <th>weight<\/th>\n      <th>uv<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":13,"columnDefs":[{"className":"dt-right","targets":[0,1,2,4,5,6]}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,13,25,50,100],"rowCallback":"function(row, data) {\nDTWidget.formatCurrency(this, row, data, 4, \"$\", 0, 3, \",\", \".\", true);\nDTWidget.formatRound(this, row, data, 5, 2, 3, \",\", \".\");\nDTWidget.formatRound(this, row, data, 6, 2, 3, \",\", \".\");\nvar value=data[2]; $(row).css({'color':value == 2005 ? \"#DDDDDD\" : value,'background-color':value == 2005 ? \"#3B556E\" : value});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p>In Figure 1 is shown the same information stored in Table 1, i.e., the unit value computed in the aggregated level by year. The outlier can be easily identified when we look to the graphic below. The <code>uv</code> seems to be a stable behavior from 2000 to 2011 when you analyze Figure 1. However, in 2012 a sharp increase in the <code>uv</code> is noted. On the other hand, when we look at Figure 2, that is the same information, but without the year 2012, so it is possible to see clearly the increasing trend starting in 2007.</p>
 <div class="row">
 <div class="col-md-6">
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
 <img src="bookdown-FisheriesTrade_files/figure-html/unnamed-chunk-2-1.svg" alt="Figure 1: The whole time series of imports." width="672" />
 <p class="caption">
-Figure 4.1: Figure 1: The whole time series of imports.
+Figure 5.1: Figure 1: The whole time series of imports.
 </p>
 </div>
 </div>
@@ -141,7 +149,7 @@ Figure 4.1: Figure 1: The whole time series of imports.
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
 <img src="bookdown-FisheriesTrade_files/figure-html/unnamed-chunk-3-1.svg" alt="Figure 2: The time series of imports without the year 2012." width="672" />
 <p class="caption">
-Figure 4.2: Figure 2: The time series of imports without the year 2012.
+Figure 5.2: Figure 2: The time series of imports without the year 2012.
 </p>
 </div>
 </div>
@@ -149,10 +157,10 @@ Figure 4.2: Figure 2: The time series of imports without the year 2012.
 <p>Despite the visual approach works well to identify the possible outliers, it is not possible to check each graphic to figure out the outliers. Therefore, it needs to use a general rule that can be applied in each combination. In the next section, we show two methods to figure out outliers in the trade data, the first one is the Boxplot, and the second one is the Median Absolute Deviation (MAD).</p>
 </div>
 <div id="outlier-detection-in-the-aggregated-level" class="section level2">
-<h2><span class="header-section-number">4.2</span> Outlier detection in the aggregated level</h2>
+<h2><span class="header-section-number">5.2</span> Outlier detection in the aggregated level</h2>
 <p>TODO</p>
 <div id="boxplot" class="section level3">
-<h3><span class="header-section-number">4.2.1</span> Boxplot</h3>
+<h3><span class="header-section-number">5.2.1</span> Boxplot</h3>
 <p>One of the methods to try figured out outlier in the aggregated data is the boxplot rule.</p>
 <ol style="list-style-type: decimal">
 <li>Set the coefficient <span class="math inline">\(k\)</span>, for instance <span class="math inline">\(k = 5\)</span>.</li>
@@ -168,7 +176,7 @@ The IQR is a measure of variability, based on dividing a data set into quartiles
 </p>
 </div>
 <div id="example" class="section level4">
-<h4><span class="header-section-number">4.2.1.1</span> Example</h4>
+<h4><span class="header-section-number">5.2.1.1</span> Example</h4>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(k = 5\)</span></li>
 <li>Compute the percentiles:
@@ -183,13 +191,13 @@ The IQR is a measure of variability, based on dividing a data set into quartiles
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
 <img src="bookdown-FisheriesTrade_files/figure-html/unnamed-chunk-5-1.svg" alt="Figure 3: Boxplot exemplifying the outlier detection." width="576" />
 <p class="caption">
-Figure 4.3: Figure 3: Boxplot exemplifying the outlier detection.
+Figure 5.3: Figure 3: Boxplot exemplifying the outlier detection.
 </p>
 </div>
 </div>
 </div>
 <div id="median-absolute-deviation-mad" class="section level3">
-<h3><span class="header-section-number">4.2.2</span> Median Absolute Deviation (MAD)</h3>
+<h3><span class="header-section-number">5.2.2</span> Median Absolute Deviation (MAD)</h3>
 <p>There are many methods for outlier detection, for instance, model-based, quantiles methods, and deviation from average. However, in this task, we are manipulating the massive amount of heterogeneous data grouped in country and commodity class. Therefore, a general and straightforward method can be an excellent choice to perform outlier detection. Given this scenario, the Median Absolute Deviation (MAD) was adopted and applied for each commodity per year. The main idea of this strategy is to find outliers that are away from its median when compared in the same commodity.</p>
 <p><span class="math display">\[
 z = \frac{|uv_i - median(uv_i)|}{MAD} \\
@@ -203,7 +211,7 @@ MAD = median(|uv_i - median(uv_i)|)
 <li>If <span class="math inline">\(z &gt; \text{limsup} \mid z &lt; \text{liminf}\)</span>, then <span class="math inline">\(uv\)</span> is a outlier.</li>
 </ol>
 <div id="example-1" class="section level4">
-<h4><span class="header-section-number">4.2.2.1</span> Example</h4>
+<h4><span class="header-section-number">5.2.2.1</span> Example</h4>
 <ol style="list-style-type: decimal">
 <li>Compute <span class="math inline">\(z\)</span> as shown in the equation above.</li>
 <li>Compute <span class="math inline">\(\text{limsup} = 1.22 + 5 \times 1.4826 \times 0.25 = 3.07\)</span></li>
@@ -213,33 +221,33 @@ MAD = median(|uv_i - median(uv_i)|)
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
 <img src="bookdown-FisheriesTrade_files/figure-html/unnamed-chunk-6-1.svg" alt="Figure 4: Outliers detected by the MAD method.." width="864" />
 <p class="caption">
-Figure 4.4: Figure 4: Outliers detected by the MAD method..
+Figure 5.4: Figure 4: Outliers detected by the MAD method..
 </p>
 </div>
 </div>
 </div>
 </div>
 <div id="correction-of-main-outlier" class="section level2">
-<h2><span class="header-section-number">4.3</span> Correction of main outlier</h2>
+<h2><span class="header-section-number">5.3</span> Correction of main outlier</h2>
 <p>Once the outlier is detected at the aggregated level, the following step is to figure out the transaction values that were responsible for contributing to the outlier. In this project, we use two approaches for attempting to fix the discrepant values detected in the previous step. The first one is a model-based, and the second one is based on the median weighted average.</p>
 <p>The choice of approach is based on the number of transactions available on the disaggregated level. If the number of transaction is less than <span class="math inline">\(5\)</span>, then we choose the model-based approach, otherwise the median weighted average is chosen. For instance, in the previous step, the year 2012 was detected as an outlier by the two approaches. When this year is disgregated, there is only one (<span class="math inline">\(n = 1\)</span>) transaction that could be responsible for generating this outlier. In this case, the approach chosen is the model-based, once <span class="math inline">\(n = 1\)</span>.</p>
 <div id="htmlwidget-fa4f387fee45a5c4e72d" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-fa4f387fee45a5c4e72d">{"x":{"filter":"none","caption":"<caption><\/caption>","data":[[76],[1],[2012],["292.9.1.90"],[32890],[2820],[11.6631205673759]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>reporter<\/th>\n      <th>flow<\/th>\n      <th>year<\/th>\n      <th>faocode<\/th>\n      <th>value<\/th>\n      <th>weight<\/th>\n      <th>uv<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":13,"columnDefs":[{"className":"dt-right","targets":[0,1,2,4,5,6]}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,13,25,50,100],"rowCallback":"function(row, data) {\nvar value=data[2]; $(row).css({'color':value == '2005' ? '#DDDDDD' : '','background-color':value == '2005' ? '#3B556E' : ''});\nDTWidget.formatRound(this, row, data, 5, 2, 3, ',', '.');\nDTWidget.formatRound(this, row, data, 6, 2, 3, ',', '.');\nDTWidget.formatCurrency(this, row, data, 4, '$', 0, 3, ',', '.', true);\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-fa4f387fee45a5c4e72d">{"x":{"filter":"none","caption":"<caption><\/caption>","data":[[76],[1],[2012],["292.9.1.90"],[32890],[2820],[11.6631205673759]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>reporter<\/th>\n      <th>flow<\/th>\n      <th>year<\/th>\n      <th>faocode<\/th>\n      <th>value<\/th>\n      <th>weight<\/th>\n      <th>uv<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":13,"columnDefs":[{"className":"dt-right","targets":[0,1,2,4,5,6]}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,13,25,50,100],"rowCallback":"function(row, data) {\nDTWidget.formatCurrency(this, row, data, 4, \"$\", 0, 3, \",\", \".\", true);\nDTWidget.formatRound(this, row, data, 5, 2, 3, \",\", \".\");\nDTWidget.formatRound(this, row, data, 6, 2, 3, \",\", \".\");\nvar value=data[2]; $(row).css({'color':value == 2005 ? \"#DDDDDD\" : value,'background-color':value == 2005 ? \"#3B556E\" : value});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <div id="locally-estimated-scatterplot-smoothing-loess" class="section level3">
-<h3><span class="header-section-number">4.3.1</span> Locally Estimated Scatterplot Smoothing (LOESS)</h3>
+<h3><span class="header-section-number">5.3.1</span> Locally Estimated Scatterplot Smoothing (LOESS)</h3>
 <p>To fix the transactions that generated the outlier in the aggregated level is fitted a LOESS model considering the <code>log(uv)</code> as variable response and <code>year</code> as the covariate. The rows which the year was detected as outlier were removed before to fit the model. Once the model is fitted, it is used to predict a new value to the given year. In our example, the year is 2012 and the value predicted by model is 4.701.</p>
 <div id="example-2" class="section level4">
-<h4><span class="header-section-number">4.3.1.1</span> Example</h4>
+<h4><span class="header-section-number">5.3.1.1</span> Example</h4>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
 <img src="bookdown-FisheriesTrade_files/figure-html/unnamed-chunk-9-1.svg" alt="Figure 4: Correction of the outlier using the LOESS model." width="864" />
 <p class="caption">
-Figure 4.5: Figure 4: Correction of the outlier using the LOESS model.
+Figure 5.5: Figure 4: Correction of the outlier using the LOESS model.
 </p>
 </div>
 </div>
 </div>
 <div id="median-weighted-average" class="section level3">
-<h3><span class="header-section-number">4.3.2</span> Median weighted average</h3>
+<h3><span class="header-section-number">5.3.2</span> Median weighted average</h3>
 <p>When the number of transactions in the disaggregated level is greater than or equal <span class="math inline">\(5\)</span>, i.e., <span class="math inline">\(n \geq 5\)</span>, the method Median weighted is chosen. In this case, before to apply the correction method we should to identify those/that transactions responsible for generating the outlier. Therefore, the methods to detect outlier mentioned previously are applied in the disaggregated level and then it is possible to identify that/those discrepant transactions.</p>
 <p>Once the discrepant transactions are identified the correction is value is computed as following:</p>
 <ol style="list-style-type: decimal">

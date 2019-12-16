@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Fishery: Trade Module</title>
+  <meta name="description" content="Fisheries Trade Documentation">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Fishery: Trade Module" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="img/cover.svg" />
+  <meta property="og:description" content="Fisheries Trade Documentation" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Fishery: Trade Module" />
+  
+  <meta name="twitter:description" content="Fisheries Trade Documentation" />
+  <meta name="twitter:image" content="img/cover.svg" />
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="sec-intro.html">
+<link rel="next" href="sec-mapping.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.10/datatables.js"></script>
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="ess.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li><a href="migration-actors.html#migration-actors"><strong>Migration actors</strong></a></li>
+<li class="chapter" data-level="1" data-path="sec-intro.html"><a href="sec-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="sec-data.html"><a href="sec-data.html"><i class="fa fa-check"></i><b>2</b> Data</a><ul>
+<li class="chapter" data-level="2.1" data-path="sec-data.html"><a href="sec-data.html#unsd---comtrade"><i class="fa fa-check"></i><b>2.1</b> UNSD - COMTRADE</a></li>
+<li class="chapter" data-level="2.2" data-path="sec-data.html"><a href="sec-data.html#eurostat"><i class="fa fa-check"></i><b>2.2</b> Eurostat</a></li>
+<li class="chapter" data-level="2.3" data-path="sec-data.html"><a href="sec-data.html#tdm-and-other-sources"><i class="fa fa-check"></i><b>2.3</b> TDM and other sources</a></li>
+<li class="chapter" data-level="2.4" data-path="sec-data.html"><a href="sec-data.html#data-builder"><i class="fa fa-check"></i><b>2.4</b> Data Builder</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sec-mapping.html"><a href="sec-mapping.html"><i class="fa fa-check"></i><b>3</b> Mapping trade data</a></li>
+<li class="chapter" data-level="4" data-path="sec-missing.html"><a href="sec-missing.html"><i class="fa fa-check"></i><b>4</b> Missing data and imputation</a></li>
+<li class="chapter" data-level="5" data-path="outlier-detection.html"><a href="outlier-detection.html"><i class="fa fa-check"></i><b>5</b> Outlier Detection</a><ul>
+<li class="chapter" data-level="5.1" data-path="outlier-detection.html"><a href="outlier-detection.html#data"><i class="fa fa-check"></i><b>5.1</b> Data</a></li>
+<li class="chapter" data-level="5.2" data-path="outlier-detection.html"><a href="outlier-detection.html#outlier-detection-in-the-aggregated-level"><i class="fa fa-check"></i><b>5.2</b> Outlier detection in the aggregated level</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="outlier-detection.html"><a href="outlier-detection.html#boxplot"><i class="fa fa-check"></i><b>5.2.1</b> Boxplot</a></li>
+<li class="chapter" data-level="5.2.2" data-path="outlier-detection.html"><a href="outlier-detection.html#median-absolute-deviation-mad"><i class="fa fa-check"></i><b>5.2.2</b> Median Absolute Deviation (MAD)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="outlier-detection.html"><a href="outlier-detection.html#correction-of-main-outlier"><i class="fa fa-check"></i><b>5.3</b> Correction of main outlier</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="outlier-detection.html"><a href="outlier-detection.html#locally-estimated-scatterplot-smoothing-loess"><i class="fa fa-check"></i><b>5.3.1</b> Locally Estimated Scatterplot Smoothing (LOESS)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="outlier-detection.html"><a href="outlier-detection.html#median-weighted-average"><i class="fa fa-check"></i><b>5.3.2</b> Median weighted average</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="sec-mirroring.html"><a href="sec-mirroring.html"><i class="fa fa-check"></i><b>6</b> Trade partners</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Fishery: Trade Module</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sec:data" class="section level1">
+<h1><span class="header-section-number">2</span> Data</h1>
+<p>There are three main data sources for trade data involved in the Fishreries Trade module: UNSD, Eurostat, and TDM. The raw data are harvested by the Statistical Working System Team for both UNSD (Comtrade) and Eurostat by downloading through their API’s respectively, while the data from TDM database is provided by the FIAS. For less than ten countries, we get some information from other sources: FTR, national websites, etc.</p>
+<p>The frequency of harvesting the trade data needs to be agreed with ESS. There is an effort of the ESS and SWST to provide the user of the trade data a tool that enables users to harvest the data whenever they want. This tool and the process to harvest trade data is currently under development and aim to harvest only data from Comtrade and Eurostat. The other source should be define by FIAS unit.</p>
+<p>Currently, Comtrade and Eurostat data are stored in different data tables under the domain <strong>trade-input-data</strong>. The partner of data tables name that store the Comtrade data is “ct_tariffline_unlogged_<strong>YYYY</strong>”, where <em>YYYY</em> means the respective year, while for the Eurostat is “ce_combinednomenclature_unlogged_<strong>YYYY</strong>”. The TDM data is stored at data table “fishtrade_tdm_<strong>YYYY</strong>” under domain <strong>Fisheries Commodities</strong>. The other sources have the same standard name “fishtrade_other_sources_<strong>YYYY</strong>” under domain <strong>Fisheries Commodities</strong>. Altought, there are different data source, the data structure should have the same shape and columns.</p>
+<p>In Table <a href="sec-data.html#tab:chapter">2.1</a> is shown the chapters that must be downloaded to cover all commodities for the Fisheries Trade Module. The chapters were defined and validated by the technical unit.</p>
+<table style="width:50%; font-size: 12px; margin-left: auto; margin-right: auto;" class="table">
+<caption style="font-size: initial !important;">
+<span id="tab:chapter">Table 2.1: </span>Chapters considered for Fisheries Trade module
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Code
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+03
+</td>
+<td style="text-align:left;">
+Fish and crustaceans, molluscs and other aquatic invertebrates
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+05
+</td>
+<td style="text-align:left;">
+Animal originated products; not elsewhere specified or included
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:left;">
+Oil seeds and oleaginous fruits; miscellaneous grains, seeds and fruit, industrial or medicinal plants; straw and fodder
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:left;">
+Lac; gums, resins and other vegetable saps and extracts
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+15
+</td>
+<td style="text-align:left;">
+Animal or vegetable fats and oils and their cleavage products; prepared animal fats; animal or vegetable waxes
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+16
+</td>
+<td style="text-align:left;">
+Meat, fish or crustaceans, molluscs or other aquatic invertebrates; preparations thereof
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+21
+</td>
+<td style="text-align:left;">
+Miscellaneous edible preparations
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+23
+</td>
+<td style="text-align:left;">
+Food industries, residues and wastes thereof; prepared animal fodder
+</td>
+</tr>
+</tbody>
+</table>
+<p>After filtering these chapters, some codes must be excluded, which are those codes that start by <strong>030760 - Snails, Other Than Sea Snails, Live, Fresh, Chilled, Frozen, Dried, Salted Or In Brine</strong> or <strong>160558 - Prepared Or Preserved Snails, Other Than Sea Snails</strong>. These codes are stored at data table <strong>fishtrade_param_hs_exclude</strong> under domain Fisheries Commodities.</p>
+<p>In Table <a href="sec-data.html#tab:filter-data">2.2</a>, we go through the chapter by selecting the commodities which the code starts with the code shown in the table below. In this case, the filter is more specific than the previous one.</p>
+<table style="width:50%; font-size: 12px; margin-left: auto; margin-right: auto;" class="table">
+<caption style="font-size: initial !important;">
+<span id="tab:filter-data">Table 2.2: </span>Codes considered for Fisheries Trade module
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Code
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+Fish and crustaceans, molluscs and other aquatic invertebrates
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0508
+</td>
+<td style="text-align:left;">
+Coral and similar materials, unworked or simply prepared, shells of molluscs, crustaceans or echinoderms and cuttle-bone, not cut to shape powder and waste thereof
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0509
+</td>
+<td style="text-align:left;">
+Sponges, natural; of animal origin
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+051191
+</td>
+<td style="text-align:left;">
+Animal products; of fish or crustaceans, molluscs or other aquatic invertebrates; dead animals of chapter 03, unfit for human consumption
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+051199
+</td>
+<td style="text-align:left;">
+Animal products; n.e.c. in chapter 5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+121220
+</td>
+<td style="text-align:left;">
+Seaweeds and other algae; of a kind used primarily for human consumption, fresh, chilled, frozen or dried, whether or not ground
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+130231
+</td>
+<td style="text-align:left;">
+Mucilages and thickeners; agar-agar, whether or not modified, derived from vegetable products
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1504
+</td>
+<td style="text-align:left;">
+Fats and oils and their fractions of fish or marine mammals; whether or not refined, but not chemically modified
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1604
+</td>
+<td style="text-align:left;">
+Prepared or preserved fish; caviar and caviar substitutes prepared from fish eggs
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1605
+</td>
+<td style="text-align:left;">
+Crustaceans, molluscs and other aquatic invertebrates, prepared or preserved
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+210390
+</td>
+<td style="text-align:left;">
+Sauces and preparations therefor; mixed condiments and mixed seasonings
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+230120
+</td>
+<td style="text-align:left;">
+Flours, meals and pellets; of fish or of crustaceans, molluscs or other aquatic invertebrates
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+230990
+</td>
+<td style="text-align:left;">
+Dog or cat food; (not put up for retail sale), used in animal feeding
+</td>
+</tr>
+</tbody>
+</table>
+<div id="unsd---comtrade" class="section level2">
+<h2><span class="header-section-number">2.1</span> UNSD - COMTRADE</h2>
+<p>The tariff line data from UNSD contains multiple rows with identical combination of reporter/partner/commodity/flow/year/qunit (unit of quantity). Those are transactions registered separately, thus rows containinig non-missing values and quantities can be aggregated. Missing variables of the same type are also aggregated if they are all missing, as they will produce a missing aggregated value for missing disaggregated values while correctly summing the remaining variables.</p>
+<ul>
+<li>Commodities at Tariff Line level, i.e., at the national code level. The code is composed by at least six digits up to twelve, where the first six digits follow the <a href="https://unstats.un.org/unsd/tradekb/Knowledgebase/50018/Harmonized-Commodity-Description-and-Coding-Systems-HS">Harmonized System</a>, and the other digits are country-specific.</li>
+</ul>
+<blockquote>
+The Harmonized System is an international nomenclature for the classification of products. It allows participating countries to classify traded goods on a common basis for customs purposes. At the international level, the Harmonized System (HS) for classifying goods is a six-digit code system.
+<footer>
+— Harmonized System
+</footer>
+</blockquote>
+<ul>
+<li><p>UNSD Tariff line data reports area code with Tariff line M49 standard (which are different for official M49). The area code is converted in FAO country code using a specific conversion table provided by Team ENV.</p></li>
+<li><p>Countries that are not supposed to exist in the year for which the module runs are removed from the data (e.g., Serbia did not exist as a single country in 2004).</p></li>
+<li><p>European countries (as reporters) already in Eurostat data are removed.</p></li>
+<li><p>Area codes not mapping to any FAO country code are separately saved and removed from further analyses. All countries mapping to code 252 (which correponds to undefined areas) are mapped to the 896 M49 code (“Other nei”).</p></li>
+</ul>
+<p>The flow codes of re-Import (code 4) are recoded into Import (code 1) and codes of re-Export (code 3) are kept. This procedure is applied following UNSD standards:</p>
+<blockquote>
+Exports of a country can be distinguished as exports of domestic goods and exports of foreign goods. The second class is generally referred to as re-exports. The exports shown in our database contain both the exports of domestic and foreign goods. Re-exports are exports of foreign goods in the same state as previously imported; they are to be included in the country exports. It is recommended that they be recorded separately for analytical purposes. This may require the use of supplementary sources of information in order to determine the origin of re-exports, i.e., to determine that the goods in question are indeed re-exports rather than the export of goods that have acquired domestic origin through processing. Re-imports are goods imported in the same state as previously exported. They are included in the country imports. It is recommended that they be recorded separately for analytical purposes. This may require the use of supplementary sources of information in order to determine the origin of re-imports, i.e., to determine that the goods in question are indeed re-imports rather than the import of goods that have acquired foreign origin through processing. There are several reasons why an exported good might return to the country of origin. The exported good might be defective, the importer might have defaulted on payments or cancelled the order, the authorities might have imposed an import barrier, or demand or prices in the country of origin might have made it worthwhile to bring the good back.
+<footer>
+— See <a href="http://unstats.un.org/unsd/tradekb/Knowledgebase/Reexports-and-Reimports" class="uri">http://unstats.un.org/unsd/tradekb/Knowledgebase/Reexports-and-Reimports</a>
+</footer>
+</blockquote>
+</div>
+<div id="eurostat" class="section level2">
+<h2><span class="header-section-number">2.2</span> Eurostat</h2>
+<ul>
+<li><p>Only numeric codes of reporters and partners are kept (letters are not allowed; basically this removes the “EU” total).</p></li>
+<li><p>Only numeric CN8 codes (hs) are kept (letters are not allowed).</p></li>
+<li><p>Only stat_regime equal to 4 is kept.</p></li>
+</ul>
+<blockquote>
+In this system [“Statistical regime 4” or “Total trade”], the recorded aggregates include all goods entering or leaving the economic territory of a country with the exception of simple transit trade. In particular, all goods received into customs warehouses are recorded as imports, regardless of whether they subsequently go into free circulation in the Member State of receipt. Similarly, outgoing goods from customs warehouses are included in the general trade aggregates, at the time they leave the Member State.
+<footer>
+— See pag. 10 in DG Trade Statistical Guide, July 2019, <a href="https://trade.ec.europa.eu/doclib/docs/2013/may/tradoc_151348.pdf" class="uri">https://trade.ec.europa.eu/doclib/docs/2013/may/tradoc_151348.pdf</a>
+</footer>
+</blockquote>
+</div>
+<div id="tdm-and-other-sources" class="section level2">
+<h2><span class="header-section-number">2.3</span> TDM and other sources</h2>
+<p>The TDM and other sources are processed using the same function that processing the data from Comtrade. Some small adaption should be done to fit well the data from these different data sources.</p>
+</div>
+<div id="data-builder" class="section level2">
+<h2><span class="header-section-number">2.4</span> Data Builder</h2>
+<p>The Data Builder is a module developed to build the data by choosing the country, year, and data source for each flow (import, export). For example, the user can select the year 2019, Brazil, and TDM for both sources. Given this selection, the data builder will get the raw data from the specific data sources and then process it. The process is composed basically by, renaming columns, filtering chapter, converting M49 codes, and recode variables. After to process the raw data the Data Builder store them in the SWS as the data table <strong>fishtrade_built_data</strong> under domain “Fisheries Commodities”.</p>
+<p>In Figure <a href="sec-data.html#fig:databuilder">2.1</a>, we show the data build workflow. The user must select the country, year, and data source, and then the module will save the data built into SWS for being used for the next processes.</p>
+<div class="figure"><span id="fig:databuilder"></span>
+<img src="img/data_builder.svg" alt="Data builder data flow."  />
+<p class="caption">
+Figure 2.1: Data builder data flow.
+</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sec-intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sec-mapping.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
