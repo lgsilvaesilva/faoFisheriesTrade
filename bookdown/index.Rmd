@@ -17,14 +17,45 @@ knitr::opts_chunk$set(
 	message = FALSE,
 	warning = FALSE
 )
+
+library(kableExtra)
 ```
+
+<!-- <center> -->
+<!-- <img src="img/work-progress.jpg" alt="work-progress" width="30%"/> -->
+<!-- </center> -->
 
 # Welcome {-}
 
-<center>
-<img src="img/cover.svg" alt="cover" width="60%"/>
-</center>
+<!-- The migration to the Statistival Working System (SWS) involves a series of different actors through which the data is acquired, processed, validated, and disseminated for public usage. Even though the FPT chain has been working timely for years, there is a need to standardize the processes into the corporate Statistical Working System with the promise of better management of statistical objects involved by making them findable, accessible, and re-usable. -->
+
+This document describes the main institutional actors involved in the migration as well as the FISHERIES TRADE resources (**code lists**, **datasets**, **data tables**) created to support the SWS plugins (R modules) to meet technical unit requirements. Furthermore, the modules are presented in the form of chapters providing a detailed description of their workflows involving **input &rarr; processing &rarr; output** as well as results showing whether the modules have lived up to expectations.
+
+**IMPORTANT:** Use the Chrome browser to have a correct vizualization of HTML outputs in this online document.
 
 <center>
-<img src="img/work-progress.jpg" alt="work-progress" width="30%"/>
+<img src="img/cover.svg" alt="cover" width="70%"/>
 </center>
+
+# **Migration actors** {-}
+
+Any migration into the SWS requires the interaction between at least three actors: 
+
+1. The **technical unit** interested in automating either some or all its analytical processes in the SWS. The technical unit can be treated as client demanding services from the counterparts responsible for the implementation of its data and statistical assets in the SWS. Therefore, a successful Fisheries Trade migration depends on the coordination between the technical division and other parts. In the Fisheries Trade - SWS migration framework the technical unit is called FIAS and is represented by:
+
+  - **Stefania Vannuccini** *Senior Fishery Officer (FIAS)*
+  - **Adrienne Egger** *Fishery Officer (FIAS)*
+  - **Barbara Senfter** *Statistical clerk (FIAS)*
+  - **Thomas Berger** *Fishery Statistician (FIAS)*
+
+2. The **ESS - Methodological Innovation Team** (ESS - SWS) responsible for the implementation and documentation of the required statistical processes. From the ESS - SWS team the focal points for Fishery Trade - SWS migration are:
+  
+  - **Carola Fabi** *Senior Statistician (ESSD)*
+  - **Luís Silva** *Statistician (ESSD)*
+  - **Christian Mongeau** *Statistician (ESSD)*
+  
+3. The **CIO - SWS** the **primary backend and frontend maintainer of the SWS** and responsible for the implementation and documentation of non-statistical processes (IT infrastructure). The CIO - SWS team have as interlocutors:
+
+  - **Enrico Anello** *Full Stack Developer (CIO)*
+  - **Matteo Terrinoni** *Full Stack Developer (CIO)*
+  - **John Rowell** *Information Technology Officer (CIO)*
