@@ -367,7 +367,7 @@ In this system [“Statistical regime 4” or “Total trade”], the recorded a
 <div id="data-builder" class="section level2">
 <h2><span class="header-section-number">2.4</span> Data Builder</h2>
 <p>The Data Builder is a module developed to build the data by choosing the country, year, and data source for each flow (import, export). For example, the user can select the year 2019, Brazil, and TDM for both sources. Given this selection, the data builder will get the raw data from the specific data sources and then process it. The process is composed basically by, renaming columns, filtering chapter, converting M49 codes, and recode variables. After to process the raw data the Data Builder store them in the SWS as the data table <strong>fishtrade_built_data</strong> under domain “Fisheries Commodities”.</p>
-<p>In Figure <a href="sec-data.html#fig:databuilder">2.1</a>, we show the data build workflow. The user must select the country, year, and data source, and then the module will save the data built into SWS for being used for the next processes.</p>
+<p>In Figure <a href="sec-data.html#fig:databuilder">2.1</a>, we show the data build workflow. The user must select the country, year, and data source, and then the module will save the data built into SWS for being used for the next processes. Once that the user have build and validated the data, the next step is to perform a standardization/mapping. The details are divided between UNSD Tariff line and Eurostat due to the nature of the differences among the two datasets.</p>
 <div class="figure"><span id="fig:databuilder"></span>
 <img src="img/data_builder.svg" alt="Data builder data flow."  />
 <p class="caption">
