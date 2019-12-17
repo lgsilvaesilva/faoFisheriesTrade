@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
-  
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 <link rel="prev" href="sec-intro.html">
 <link rel="next" href="sec-mapping.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
@@ -70,8 +70,9 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
-<li><a href="migration-actors.html#migration-actors"><strong>Migration actors</strong></a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#migration-team"><i class="fa fa-check"></i>Migration Team</a></li>
+</ul></li>
 <li class="chapter" data-level="1" data-path="sec-intro.html"><a href="sec-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="sec-data.html"><a href="sec-data.html"><i class="fa fa-check"></i><b>2</b> Data</a><ul>
 <li class="chapter" data-level="2.1" data-path="sec-data.html"><a href="sec-data.html#unsd---comtrade"><i class="fa fa-check"></i><b>2.1</b> UNSD - COMTRADE</a></li>
@@ -93,6 +94,25 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="sec-mirroring.html"><a href="sec-mirroring.html"><i class="fa fa-check"></i><b>6</b> Trade partners</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-a.html"><a href="appendix-a.html"><i class="fa fa-check"></i><b>A</b> Appendix A</a><ul>
+<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html#datatables"><i class="fa fa-check"></i>Datatables</a><ul>
+<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html#data-built"><i class="fa fa-check"></i>Data built</a></li>
+<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html#trade-mapping-table"><i class="fa fa-check"></i>Trade mapping table</a></li>
+<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html#table-to-map-hs-code-to-be-mapped"><i class="fa fa-check"></i>Table to map: HS code to be mapped</a></li>
+<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html#hs-masterfile"><i class="fa fa-check"></i>HS masterfile</a></li>
+<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html#data-imputed"><i class="fa fa-check"></i>Data imputed</a></li>
+<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html#data-imputed-and-validated"><i class="fa fa-check"></i>Data imputed and validated</a></li>
+<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html#outliers-detected"><i class="fa fa-check"></i>Outliers detected</a></li>
+<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html#outliers-corrected"><i class="fa fa-check"></i>Outliers corrected</a></li>
+<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html#outliers-validated"><i class="fa fa-check"></i>Outliers validated</a></li>
+<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html#data-mirrored"><i class="fa fa-check"></i>Data mirrored</a></li>
+<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html#partnership-mapping-table"><i class="fa fa-check"></i>Partnership mapping table</a></li>
+<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html#helper-data-tables"><i class="fa fa-check"></i>Helper data tables</a></li>
+<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html#data-sources"><i class="fa fa-check"></i>Data sources</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="appendix-b.html"><a href="appendix-b.html"><i class="fa fa-check"></i><b>B</b> Appendix B</a></li>
 </ul>
 
       </nav>
@@ -359,6 +379,11 @@ In this system [“Statistical regime 4” or “Total trade”], the recorded a
 — See pag. 10 in DG Trade Statistical Guide, July 2019, <a href="https://trade.ec.europa.eu/doclib/docs/2013/may/tradoc_151348.pdf" class="uri">https://trade.ec.europa.eu/doclib/docs/2013/may/tradoc_151348.pdf</a>
 </footer>
 </blockquote>
+<ul>
+<li><p>Eurostat classifies areas in their geonomenclature. These codes are converted in FAO country codes using a specific conversion table, stored in the SWS, provided by Team B/C. Area codes not mapping to any FAO country code is reported and the records for these area codes are removed. All countries mapping to code 252 (which correpond undefined areas) are mapped to the 896 M49 code (“Other nei”).</p></li>
+<li><p>Commodity codes are reported in CN8 codes (Combined Nomenclature 8 digits). The codes are converted in FCL (FAO Commodity List) codes.</p></li>
+<li><p>Values are converted from EUR to USD using the table, stored in the SWS, with avarage EUR/USD exchange rate for each year provided by Team B/C.</p></li>
+</ul>
 </div>
 <div id="tdm-and-other-sources" class="section level2">
 <h2><span class="header-section-number">2.3</span> TDM and other sources</h2>
