@@ -1,0 +1,109 @@
+---
+output: html_fragment
+fontsize: 14pt
+---
+
+## Getting Started
+
+In this section we aim to provide a quick introduction for each module available in the Fisheries Trade Tools. The short videos below show the primary features developed in order to the user be able to interact accross the modules.
+
+- - -
+<details>
+<summary style="font-size:15pt; color:blue">Module: Getting Data</summary>
+
+<!-- ### Module: Getting Data -->
+
+<div class="column-left">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0OY8qbeclCs" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<div class="column-right" style="font-size: 15pt> It shows how the user can build the data for each country wished. After the selction, the user **must** save the data shown, otherwise the data will be discarded. 
+
+Steps: 
+
+1. Select a country from the list.
+2. Select a year.
+3. Select a data source to imports data.
+4. Select a data source to exports data.
+5. Click on the button "Build data".
+6. As the data has been loaded the user must click on "Save".
+</div>
+<div class="clear"></div>
+</details>
+
+- - -
+
+<details>
+<summary style="font-size:15pt; color:blue">Module: Mapping</summary>
+
+<!-- ### Module: Mapping -->
+
+#### Run  Mapping 
+<div class="column-left">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yWzPM1sfSWQ" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<div class="column-right" style="font-size: 15pt> 
+1. Select the year;
+2. Select the country;
+3. Click on the button "Run Mapping"
+
+</div>
+<div class="clear"></div>
+
+- - - 
+
+#### Discard mapping
+<div class="column-left">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KoCzjmBwESY" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<div class="column-right" style="font-size: 15pt> 
+1. Select the row to be discarded.
+2. Click on the "<i class="fa fa-trash"></i> Discard";
+3. The user **must** "<i class="fa fa-save"></i> save after discarding the row.
+
+</div>
+<div class="clear"></div>
+
+- - - 
+
+#### Add a new mapping
+
+<div class="column-left">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/J9NWGSTbk0I" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<div class="column-right" style="font-size: 15pt> 
+
+1. Click on "<i class="fa fa-plus"></i> Add mapping"
+2. Fill out all fields required: Tariff Line; ISSCFC code or ISSCFC ID; start year; end year, HS6 use.
+3. Click on "OK"
+4. For seeing the update the user should browser around the options under the combo box "Filters", and then go back to the option "All".
+
+</div>
+<div class="clear"></div>
+
+- - -
+
+#### Update mapping
+<div class="column-left">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l9a58vsTFPY" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<div class="column-right" style="font-size: 15pt> 
+Any change in the mapping table should be save, otherwise all alteration made will be lost. The save function creates a working table which is not considered in the process until to be updated. It works like a temporary table. Once that the user updates the mappping table, i.e., export all changes to the production table, then all modifications will be considered to the next steps. 
+
+1. After any change the user should click on "Save".
+2. Click on the "Update"
+3. The user must go back to the tab "Run mapping" and run again the mapping process. It is important, because the script will perform some test over the mapping table and also in the trade data.
+
+</div>
+<div class="clear"></div>
+</details>
+
+- - -
+
+
+
+

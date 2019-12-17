@@ -1,0 +1,6 @@
+current: qa
+qa:
+  certdir: sws/qa # Path to certificate directory
+  server: https://hqlqasws1.hq.un.fao.org:8181/sws
+  token: dd399538-18c2-4ece-9bef-41c44d457629 # 22/02/2019 test
+  share: "R:"
