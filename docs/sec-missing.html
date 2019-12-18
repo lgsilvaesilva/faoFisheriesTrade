@@ -94,7 +94,14 @@
 <li class="chapter" data-level="4.3" data-path="sec-missing.html"><a href="sec-missing.html#methods"><i class="fa fa-check"></i><b>4.3</b> Methods</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="sec-missing.html"><a href="sec-missing.html#helper-tables"><i class="fa fa-check"></i><b>4.3.1</b> Helper Tables</a></li>
 <li class="chapter" data-level="4.3.2" data-path="sec-missing.html"><a href="sec-missing.html#estimate-weight-per-unit"><i class="fa fa-check"></i><b>4.3.2</b> Estimate weight per unit</a></li>
-<li class="chapter" data-level="4.3.3" data-path="sec-missing.html"><a href="sec-missing.html#imputation-by-partially-reported-weight"><i class="fa fa-check"></i><b>4.3.3</b> Imputation by partially reported weight</a></li>
+<li class="chapter" data-level="4.3.3" data-path="sec-missing.html"><a href="sec-missing.html#estimate-unit-value"><i class="fa fa-check"></i><b>4.3.3</b> Estimate Unit Value</a></li>
+<li class="chapter" data-level="4.3.4" data-path="sec-missing.html"><a href="sec-missing.html#imputation-by-partially-reported-weight"><i class="fa fa-check"></i><b>4.3.4</b> Imputation by partially reported weight</a></li>
+<li class="chapter" data-level="4.3.5" data-path="sec-missing.html"><a href="sec-missing.html#imputation-using-the-helper-tables"><i class="fa fa-check"></i><b>4.3.5</b> Imputation using the helper tables</a></li>
+<li class="chapter" data-level="4.3.6" data-path="sec-missing.html"><a href="sec-missing.html#interpolate-unit-value"><i class="fa fa-check"></i><b>4.3.6</b> Interpolate Unit Value</a></li>
+<li class="chapter" data-level="4.3.7" data-path="sec-missing.html"><a href="sec-missing.html#unit-value-total"><i class="fa fa-check"></i><b>4.3.7</b> Unit Value Total</a></li>
+<li class="chapter" data-level="4.3.8" data-path="sec-missing.html"><a href="sec-missing.html#interpolate-unit-value-total"><i class="fa fa-check"></i><b>4.3.8</b> Interpolate Unit Value Total</a></li>
+<li class="chapter" data-level="4.3.9" data-path="sec-missing.html"><a href="sec-missing.html#global-year-expanded"><i class="fa fa-check"></i><b>4.3.9</b> Global Year Expanded</a></li>
+<li class="chapter" data-level="4.3.10" data-path="sec-missing.html"><a href="sec-missing.html#global-year-expanded---hs6"><i class="fa fa-check"></i><b>4.3.10</b> Global Year Expanded - HS6</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="sec-missing.html"><a href="sec-missing.html#functions-2"><i class="fa fa-check"></i><b>4.4</b> Functions</a></li>
 </ul></li>
@@ -194,19 +201,19 @@ Figure 4.2: Imputation module: partially aggregation
 <div id="helper-tables" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Helper Tables</h3>
 <div class="figure" style="text-align: center"><span id="fig:ht-01"></span>
-<img src="img/ht-weight-per-unit-01.svg" alt="Helper Tables: 01" width="100%" />
+<img src="img/ht-weight-per-unit-01.svg" alt="Helper Tables: 01" width="90%" />
 <p class="caption">
 Figure 4.3: Helper Tables: 01
 </p>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:ht-02"></span>
-<img src="img/ht-weight-per-unit-02.svg" alt="Helper Tables: 02" width="100%" />
+<img src="img/ht-weight-per-unit-02.svg" alt="Helper Tables: 02" width="90%" />
 <p class="caption">
 Figure 4.4: Helper Tables: 02
 </p>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:ht-03"></span>
-<img src="img/ht-weight-per-unit-03.svg" alt="Helper Tables: 03" width="100%" />
+<img src="img/ht-weight-per-unit-03.svg" alt="Helper Tables: 03" width="90%" />
 <p class="caption">
 Figure 4.5: Helper Tables: 03
 </p>
@@ -269,14 +276,71 @@ Figure 4.11: Helper Tables: 03
 </div>
 </div>
 </div>
-<div id="imputation-by-partially-reported-weight" class="section level3">
-<h3><span class="header-section-number">4.3.3</span> Imputation by partially reported weight</h3>
-<div class="figure" style="text-align: center"><span id="fig:impute-partially"></span>
-<img src="img/impute-partially.svg" alt="Helper Tables: 03" width="100%" />
+<div id="estimate-unit-value" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Estimate Unit Value</h3>
+<div id="general-approach-1" class="section level4">
+<h4><span class="header-section-number">4.3.3.1</span> General Approach</h4>
+<div class="figure" style="text-align: center"><span id="fig:uv-general-approach"></span>
+<img src="img/uv-general-approach.svg" alt="Helper Tables: 03" width="90%" />
 <p class="caption">
 Figure 4.12: Helper Tables: 03
 </p>
 </div>
+</div>
+<div id="reporter---year-1" class="section level4">
+<h4><span class="header-section-number">4.3.3.2</span> Reporter - Year</h4>
+<div class="figure" style="text-align: center"><span id="fig:uv-reporter-year"></span>
+<img src="img/uv-reporter-year.svg" alt="Helper Tables: 03" width="90%" />
+<p class="caption">
+Figure 4.13: Helper Tables: 03
+</p>
+</div>
+</div>
+<div id="region---year" class="section level4">
+<h4><span class="header-section-number">4.3.3.3</span> Region - Year</h4>
+<div class="figure" style="text-align: center"><span id="fig:uv-region-year"></span>
+<img src="img/uv-region-year.svg" alt="Helper Tables: 03" width="90%" />
+<p class="caption">
+Figure 4.14: Helper Tables: 03
+</p>
+</div>
+</div>
+<div id="global---year" class="section level4">
+<h4><span class="header-section-number">4.3.3.4</span> Global - Year</h4>
+<div class="figure" style="text-align: center"><span id="fig:uv-global-year"></span>
+<img src="img/uv-global-year.svg" alt="Helper Tables: 03" width="90%" />
+<p class="caption">
+Figure 4.15: Helper Tables: 03
+</p>
+</div>
+</div>
+</div>
+<div id="imputation-by-partially-reported-weight" class="section level3">
+<h3><span class="header-section-number">4.3.4</span> Imputation by partially reported weight</h3>
+<div class="figure" style="text-align: center"><span id="fig:impute-partially"></span>
+<img src="img/impute-partially.svg" alt="Helper Tables: 03" width="100%" />
+<p class="caption">
+Figure 4.16: Helper Tables: 03
+</p>
+</div>
+</div>
+<div id="imputation-using-the-helper-tables" class="section level3">
+<h3><span class="header-section-number">4.3.5</span> Imputation using the helper tables</h3>
+</div>
+<div id="interpolate-unit-value" class="section level3">
+<h3><span class="header-section-number">4.3.6</span> Interpolate Unit Value</h3>
+</div>
+<div id="unit-value-total" class="section level3">
+<h3><span class="header-section-number">4.3.7</span> Unit Value Total</h3>
+</div>
+<div id="interpolate-unit-value-total" class="section level3">
+<h3><span class="header-section-number">4.3.8</span> Interpolate Unit Value Total</h3>
+</div>
+<div id="global-year-expanded" class="section level3">
+<h3><span class="header-section-number">4.3.9</span> Global Year Expanded</h3>
+</div>
+<div id="global-year-expanded---hs6" class="section level3">
+<h3><span class="header-section-number">4.3.10</span> Global Year Expanded - HS6</h3>
 </div>
 </div>
 <div id="functions-2" class="section level2">
