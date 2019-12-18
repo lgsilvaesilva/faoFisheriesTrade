@@ -155,6 +155,7 @@
             <section class="normal" id="section-">
 <div id="sec:missing" class="section level1">
 <h1><span class="header-section-number">4</span> Missing data</h1>
+<p>It is very often that some countries do not reporter the weight of the commodity traded, which might generate the loss of information, and also the comparison between regions will not be able to be performed. In this section, we describe all the processes involved in the estimation of the missing, imputation methods, mathematical correction, and the validation tool.</p>
 <div id="data-imputation-summary" class="section level2 unnumbered">
 <h2>Data imputation summary</h2>
 <ul>
@@ -162,6 +163,11 @@
 <ul>
 <li>Domain: Fisheries Commodities</li>
 <li>Input data: <a href="appendix-a.html#tab:dt-built-data"><code>fishtrade_built_data</code></a></li>
+<li>Output data:
+<ul>
+<li><a href="appendix-a.html#tab:dt-data-imputed"><code>fishtrade_data_imputed</code></a>: The data imputed is stored in this table to be validated by the expert. It is known as a working table.</li>
+<li><a href="appendix-a.html#tab:dt-data-imputed-validated"><code>fishtrade_data_imputed_validated</code></a>: This is almost a copy from the <code>fishtrade_data_imputed</code> datatable, but in this datatable the user is not allowed to change anything. All changes should be done over the datatable <code>fishtrade_data_imputed</code>, and then can be export to the final data table <code>fishtrade_data_imputed_validated</code>.</li>
+</ul></li>
 </ul></li>
 </ul>
 <blockquote>
@@ -180,6 +186,8 @@
 </div>
 <div id="mathematical-conversion" class="section level2">
 <h2><span class="header-section-number">4.1</span> Mathematical conversion</h2>
+<p>The first step in the <strong>Imputation Module</strong> is the mathematical conversion. This step is not considered as an imputation method once we are just converting the units reported by the country.</p>
+<p>In Figure <a href="sec-missing.html#fig:math-conversion">4.1</a>, the left side shows the conversions applied in the quantity variable and also the weight. The right side shows all type of unit reported by the countries. When some countries do not report the weight value, but they report the quantity and also the quantity unit, hence it is possible to retrieve the weight, if the unit is reported in kilogram (code = 8). The other conversions aim to put all quantities in the same unit.</p>
 <div class="figure" style="text-align: center"><span id="fig:math-conversion"></span>
 <img src="img/math_conversion.svg" alt="Imputation module: mathematical conversions" width="80%" />
 <p class="caption">
@@ -189,8 +197,12 @@ Figure 4.1: Imputation module: mathematical conversions
 </div>
 <div id="partially-agreggation" class="section level2">
 <h2><span class="header-section-number">4.2</span> Partially Agreggation</h2>
+<p>The tariff line data from UNSD contains multiple shipments with identical combination of reporter/partner/commodity/flow/year/qunit (unit of quantity). Those are transactions registered separately, thus rows containinig non-missing values and quantities can be aggregated. Missing variables of the same type are also aggregated if they are all missing, as they will produce a missing aggregated value for missing disaggregated values while correctly summing the remaining variables. In Figure <a href="sec-missing.html#fig:partially-aggregation">4.2</a>, we show an example of this. The <span style="color: #6aa84f;">green rectangle</span> shows the values reported that can be aggregated, and in the <span style="color: #3c78d8;">blue rectangle</span> shows the missing values that will also aggregated. This figure show how the is reported, and after the partial aggregation.</p>
+<blockquote>
+<p>Note that the combination of year = 2016 | reporter = 76| partner = 764 | flow = 1 | hs = 030119000000 | qunit = 5 after the partially aggregation result in two rows. One composed by the values aggregated, and another with the missing values aggregated.</p>
+</blockquote>
 <div class="figure" style="text-align: center"><span id="fig:partially-aggregation"></span>
-<img src="img/partially_aggregation.svg" alt="Imputation module: partially aggregation" width="80%" />
+<img src="img/partially_aggregation.svg" alt="Imputation module: partially aggregation" width="70%" />
 <p class="caption">
 Figure 4.2: Imputation module: partially aggregation
 </p>
