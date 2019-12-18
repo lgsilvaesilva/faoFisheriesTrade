@@ -82,8 +82,22 @@
 <li class="chapter" data-level="2.4.1" data-path="sec-data.html"><a href="sec-data.html#functions"><i class="fa fa-check"></i><b>2.4.1</b> Functions</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="sec-mapping.html"><a href="sec-mapping.html"><i class="fa fa-check"></i><b>3</b> Mapping trade data</a></li>
-<li class="chapter" data-level="4" data-path="sec-missing.html"><a href="sec-missing.html"><i class="fa fa-check"></i><b>4</b> Missing data and imputation</a></li>
+<li class="chapter" data-level="3" data-path="sec-mapping.html"><a href="sec-mapping.html"><i class="fa fa-check"></i><b>3</b> Mapping trade data</a><ul>
+<li class="chapter" data-level="3.1" data-path="sec-mapping.html"><a href="sec-mapping.html#definitions"><i class="fa fa-check"></i><b>3.1</b> Definitions</a></li>
+<li class="chapter" data-level="3.2" data-path="sec-mapping.html"><a href="sec-mapping.html#mapping-module"><i class="fa fa-check"></i><b>3.2</b> Mapping Module</a></li>
+<li class="chapter" data-level="3.3" data-path="sec-mapping.html"><a href="sec-mapping.html#functions-1"><i class="fa fa-check"></i><b>3.3</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="sec-missing.html"><a href="sec-missing.html"><i class="fa fa-check"></i><b>4</b> Missing data</a><ul>
+<li class="chapter" data-level="" data-path="sec-missing.html"><a href="sec-missing.html#data-imputation-summary"><i class="fa fa-check"></i>Data imputation summary</a></li>
+<li class="chapter" data-level="4.1" data-path="sec-missing.html"><a href="sec-missing.html#mathematical-conversion"><i class="fa fa-check"></i><b>4.1</b> Mathematical conversion</a></li>
+<li class="chapter" data-level="4.2" data-path="sec-missing.html"><a href="sec-missing.html#partially-agreggation"><i class="fa fa-check"></i><b>4.2</b> Partially Agreggation</a></li>
+<li class="chapter" data-level="4.3" data-path="sec-missing.html"><a href="sec-missing.html#methods"><i class="fa fa-check"></i><b>4.3</b> Methods</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="sec-missing.html"><a href="sec-missing.html#helper-tables"><i class="fa fa-check"></i><b>4.3.1</b> Helper Tables</a></li>
+<li class="chapter" data-level="4.3.2" data-path="sec-missing.html"><a href="sec-missing.html#estimate-weight-per-unit"><i class="fa fa-check"></i><b>4.3.2</b> Estimate weight per unit</a></li>
+<li class="chapter" data-level="4.3.3" data-path="sec-missing.html"><a href="sec-missing.html#imputation-by-partially-reported-weight"><i class="fa fa-check"></i><b>4.3.3</b> Imputation by partially reported weight</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="sec-missing.html"><a href="sec-missing.html#functions-2"><i class="fa fa-check"></i><b>4.4</b> Functions</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="outlier-detection.html"><a href="outlier-detection.html"><i class="fa fa-check"></i><b>5</b> Outlier Detection</a><ul>
 <li class="chapter" data-level="5.1" data-path="outlier-detection.html"><a href="outlier-detection.html#data"><i class="fa fa-check"></i><b>5.1</b> Data</a></li>
 <li class="chapter" data-level="5.2" data-path="outlier-detection.html"><a href="outlier-detection.html#outlier-detection-in-the-aggregated-level"><i class="fa fa-check"></i><b>5.2</b> Outlier detection in the aggregated level</a><ul>
@@ -133,9 +147,142 @@
 
             <section class="normal" id="section-">
 <div id="sec:missing" class="section level1">
-<h1><span class="header-section-number">4</span> Missing data and imputation</h1>
-<p>TODO</p>
+<h1><span class="header-section-number">4</span> Missing data</h1>
+<div id="data-imputation-summary" class="section level2 unnumbered">
+<h2>Data imputation summary</h2>
+<ul>
+<li>Data source:
+<ul>
+<li>Domain: Fisheries Commodities</li>
+<li>Input data: <a href="appendix-a.html#tab:dt-built-data"><code>fishtrade_built_data</code></a></li>
+</ul></li>
+</ul>
+<blockquote>
+<p>The imputation is performed at the partner level, i.e, the shipments are aggregated before the imputation.</p>
+</blockquote>
+<ul>
+<li>There are 16 methods to impute the missing weights.
+<ul>
+<li>8 methods perform the imputation at Tariff Line level.</li>
+<li>8 methods perform the imputation at 6 digits (HS) level.</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>Some automatic imputations can not be achieved. The main reason for this is there is no enough information to execute any method robustly. It is necessary the user’s intervention (manual imputation)</p>
+</blockquote>
+</div>
+<div id="mathematical-conversion" class="section level2">
+<h2><span class="header-section-number">4.1</span> Mathematical conversion</h2>
+<div class="figure" style="text-align: center"><span id="fig:math-conversion"></span>
+<img src="img/math_conversion.svg" alt="Imputation module: mathematical conversions" width="80%" />
+<p class="caption">
+Figure 4.1: Imputation module: mathematical conversions
+</p>
+</div>
+</div>
+<div id="partially-agreggation" class="section level2">
+<h2><span class="header-section-number">4.2</span> Partially Agreggation</h2>
+<div class="figure" style="text-align: center"><span id="fig:partially-aggregation"></span>
+<img src="img/partially_aggregation.svg" alt="Imputation module: partially aggregation" width="80%" />
+<p class="caption">
+Figure 4.2: Imputation module: partially aggregation
+</p>
+</div>
+</div>
+<div id="methods" class="section level2">
+<h2><span class="header-section-number">4.3</span> Methods</h2>
+<div id="helper-tables" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Helper Tables</h3>
+<div class="figure" style="text-align: center"><span id="fig:ht-01"></span>
+<img src="img/ht-weight-per-unit-01.svg" alt="Helper Tables: 01" width="100%" />
+<p class="caption">
+Figure 4.3: Helper Tables: 01
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:ht-02"></span>
+<img src="img/ht-weight-per-unit-02.svg" alt="Helper Tables: 02" width="100%" />
+<p class="caption">
+Figure 4.4: Helper Tables: 02
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:ht-03"></span>
+<img src="img/ht-weight-per-unit-03.svg" alt="Helper Tables: 03" width="100%" />
+<p class="caption">
+Figure 4.5: Helper Tables: 03
+</p>
+</div>
+</div>
+<div id="estimate-weight-per-unit" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Estimate weight per unit</h3>
+<div id="general-approach" class="section level4">
+<h4><span class="header-section-number">4.3.2.1</span> General Approach</h4>
+<div class="figure" style="text-align: center"><span id="fig:wq-general-approach"></span>
+<img src="img/wq-general-approach.svg" alt="Helper Tables: 03" width="90%" />
+<p class="caption">
+Figure 4.6: Helper Tables: 03
+</p>
+</div>
+</div>
+<div id="reporter---year" class="section level4">
+<h4><span class="header-section-number">4.3.2.2</span> Reporter - Year</h4>
+<div class="figure" style="text-align: center"><span id="fig:wq-reporter-year"></span>
+<img src="img/wq-reporter-year.svg" alt="Helper Tables: 03" width="90%" />
+<p class="caption">
+Figure 4.7: Helper Tables: 03
+</p>
+</div>
+</div>
+<div id="reporter" class="section level4">
+<h4><span class="header-section-number">4.3.2.3</span> Reporter</h4>
+<div class="figure" style="text-align: center"><span id="fig:wq-reporter"></span>
+<img src="img/wq-reporter.svg" alt="Helper Tables: 03" width="90%" />
+<p class="caption">
+Figure 4.8: Helper Tables: 03
+</p>
+</div>
+</div>
+<div id="region-year" class="section level4">
+<h4><span class="header-section-number">4.3.2.4</span> Region-Year</h4>
+<div class="figure" style="text-align: center"><span id="fig:wq-region-year"></span>
+<img src="img/wq-region-year.svg" alt="Helper Tables: 03" width="90%" />
+<p class="caption">
+Figure 4.9: Helper Tables: 03
+</p>
+</div>
+</div>
+<div id="global-year" class="section level4">
+<h4><span class="header-section-number">4.3.2.5</span> Global-Year</h4>
+<div class="figure" style="text-align: center"><span id="fig:wq-global-year"></span>
+<img src="img/wq-global-year.svg" alt="Helper Tables: 03" width="90%" />
+<p class="caption">
+Figure 4.10: Helper Tables: 03
+</p>
+</div>
+</div>
+<div id="global" class="section level4">
+<h4><span class="header-section-number">4.3.2.6</span> Global</h4>
+<div class="figure" style="text-align: center"><span id="fig:wq-global"></span>
+<img src="img/wq-global.svg" alt="Helper Tables: 03" width="90%" />
+<p class="caption">
+Figure 4.11: Helper Tables: 03
+</p>
+</div>
+</div>
+</div>
+<div id="imputation-by-partially-reported-weight" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Imputation by partially reported weight</h3>
+<div class="figure" style="text-align: center"><span id="fig:impute-partially"></span>
+<img src="img/impute-partially.svg" alt="Helper Tables: 03" width="100%" />
+<p class="caption">
+Figure 4.12: Helper Tables: 03
+</p>
+</div>
+</div>
+</div>
+<div id="functions-2" class="section level2">
+<h2><span class="header-section-number">4.4</span> Functions</h2>
 
+</div>
 </div>
             </section>
 

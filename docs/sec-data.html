@@ -82,8 +82,22 @@
 <li class="chapter" data-level="2.4.1" data-path="sec-data.html"><a href="sec-data.html#functions"><i class="fa fa-check"></i><b>2.4.1</b> Functions</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="sec-mapping.html"><a href="sec-mapping.html"><i class="fa fa-check"></i><b>3</b> Mapping trade data</a></li>
-<li class="chapter" data-level="4" data-path="sec-missing.html"><a href="sec-missing.html"><i class="fa fa-check"></i><b>4</b> Missing data and imputation</a></li>
+<li class="chapter" data-level="3" data-path="sec-mapping.html"><a href="sec-mapping.html"><i class="fa fa-check"></i><b>3</b> Mapping trade data</a><ul>
+<li class="chapter" data-level="3.1" data-path="sec-mapping.html"><a href="sec-mapping.html#definitions"><i class="fa fa-check"></i><b>3.1</b> Definitions</a></li>
+<li class="chapter" data-level="3.2" data-path="sec-mapping.html"><a href="sec-mapping.html#mapping-module"><i class="fa fa-check"></i><b>3.2</b> Mapping Module</a></li>
+<li class="chapter" data-level="3.3" data-path="sec-mapping.html"><a href="sec-mapping.html#functions-1"><i class="fa fa-check"></i><b>3.3</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="sec-missing.html"><a href="sec-missing.html"><i class="fa fa-check"></i><b>4</b> Missing data</a><ul>
+<li class="chapter" data-level="" data-path="sec-missing.html"><a href="sec-missing.html#data-imputation-summary"><i class="fa fa-check"></i>Data imputation summary</a></li>
+<li class="chapter" data-level="4.1" data-path="sec-missing.html"><a href="sec-missing.html#mathematical-conversion"><i class="fa fa-check"></i><b>4.1</b> Mathematical conversion</a></li>
+<li class="chapter" data-level="4.2" data-path="sec-missing.html"><a href="sec-missing.html#partially-agreggation"><i class="fa fa-check"></i><b>4.2</b> Partially Agreggation</a></li>
+<li class="chapter" data-level="4.3" data-path="sec-missing.html"><a href="sec-missing.html#methods"><i class="fa fa-check"></i><b>4.3</b> Methods</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="sec-missing.html"><a href="sec-missing.html#helper-tables"><i class="fa fa-check"></i><b>4.3.1</b> Helper Tables</a></li>
+<li class="chapter" data-level="4.3.2" data-path="sec-missing.html"><a href="sec-missing.html#estimate-weight-per-unit"><i class="fa fa-check"></i><b>4.3.2</b> Estimate weight per unit</a></li>
+<li class="chapter" data-level="4.3.3" data-path="sec-missing.html"><a href="sec-missing.html#imputation-by-partially-reported-weight"><i class="fa fa-check"></i><b>4.3.3</b> Imputation by partially reported weight</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="sec-missing.html"><a href="sec-missing.html#functions-2"><i class="fa fa-check"></i><b>4.4</b> Functions</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="outlier-detection.html"><a href="outlier-detection.html"><i class="fa fa-check"></i><b>5</b> Outlier Detection</a><ul>
 <li class="chapter" data-level="5.1" data-path="outlier-detection.html"><a href="outlier-detection.html#data"><i class="fa fa-check"></i><b>5.1</b> Data</a></li>
 <li class="chapter" data-level="5.2" data-path="outlier-detection.html"><a href="outlier-detection.html#outlier-detection-in-the-aggregated-level"><i class="fa fa-check"></i><b>5.2</b> Outlier detection in the aggregated level</a><ul>
@@ -355,7 +369,7 @@ The Harmonized System is an international nomenclature for the classification of
 </footer>
 </blockquote>
 <ul>
-<li><p>UNSD Tariff line data reports area code with Tariff line M49 standard (which are different for official M49). The area code is converted in FAO country code using a specific conversion table provided by Team ENV.</p></li>
+<li><p>UNSD Tariff line data reports area code with Tariff line M49 standard (which are different for official M49). The area code is converted in FAO country code using a specific conversion table (<code>unsdpartnersblocks</code> under domain <code>trade-reference-files</code>) provided by Team ENV.</p></li>
 <li><p>Countries that are not supposed to exist in the year for which the module runs are removed from the data (e.g., Serbia did not exist as a single country in 2004).</p></li>
 <li><p>European countries (as reporters) already in Eurostat data are removed.</p></li>
 <li><p>Area codes not mapping to any FAO country code are separately saved and removed from further analyses. All countries mapping to code 252 (which correponds to undefined areas) are mapped to the 896 M49 code (“Other nei”).</p></li>
@@ -404,13 +418,20 @@ Figure 2.1: Data builder data flow.
 <div id="functions" class="section level3">
 <h3><span class="header-section-number">2.4.1</span> Functions</h3>
 <ul>
-<li><code>get_tradedata</code>
+<li><a href="https://github.com/SWS-Methodology/faoFisheriesTrade/blob/master/shinyFisheriesTrade_prod/functions/get_tradedata.R"><strong><code>get_tradedata</code></strong></a>: It is a wrapper function that includes all functions for several data sources. It works like a hub.
 <ul>
-<li><code>get_tldata</code></li>
-<li><code>get_esdata</code></li>
-<li><code>get_tdmdata</code></li>
+<li><a href="https://github.com/SWS-Methodology/faoFisheriesTrade/blob/master/shinyFisheriesTrade_prod/functions/get_tldata.R"><strong><code>get_tldata</code></strong></a>: It gets data from UNSD data source.</li>
+<li><a href="https://github.com/SWS-Methodology/faoFisheriesTrade/blob/master/shinyFisheriesTrade_prod/functions/get_esdata.R"><strong><code>get_esdata</code></strong></a>: It gets data from Eurostat data source.</li>
+<li><a href="https://github.com/SWS-Methodology/faoFisheriesTrade/blob/master/shinyFisheriesTrade_prod/functions/get_tdmdata.R"><strong><code>get_tdmdata</code></strong></a>: It gets data from TDM data source</li>
 </ul></li>
 </ul>
+<p>In Figure <a href="sec-data.html#fig:databuilder-functions">2.2</a>, we show the schema to build the data, as well as the datatables and domains involved in the process.</p>
+<div class="figure" style="text-align: center"><span id="fig:databuilder-functions"></span>
+<img src="img/data_builder_function_v2.svg" alt="Data builder: functions schema" width="80%" />
+<p class="caption">
+Figure 2.2: Data builder: functions schema
+</p>
+</div>
 
 </div>
 </div>

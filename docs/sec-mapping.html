@@ -82,8 +82,22 @@
 <li class="chapter" data-level="2.4.1" data-path="sec-data.html"><a href="sec-data.html#functions"><i class="fa fa-check"></i><b>2.4.1</b> Functions</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="sec-mapping.html"><a href="sec-mapping.html"><i class="fa fa-check"></i><b>3</b> Mapping trade data</a></li>
-<li class="chapter" data-level="4" data-path="sec-missing.html"><a href="sec-missing.html"><i class="fa fa-check"></i><b>4</b> Missing data and imputation</a></li>
+<li class="chapter" data-level="3" data-path="sec-mapping.html"><a href="sec-mapping.html"><i class="fa fa-check"></i><b>3</b> Mapping trade data</a><ul>
+<li class="chapter" data-level="3.1" data-path="sec-mapping.html"><a href="sec-mapping.html#definitions"><i class="fa fa-check"></i><b>3.1</b> Definitions</a></li>
+<li class="chapter" data-level="3.2" data-path="sec-mapping.html"><a href="sec-mapping.html#mapping-module"><i class="fa fa-check"></i><b>3.2</b> Mapping Module</a></li>
+<li class="chapter" data-level="3.3" data-path="sec-mapping.html"><a href="sec-mapping.html#functions-1"><i class="fa fa-check"></i><b>3.3</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="sec-missing.html"><a href="sec-missing.html"><i class="fa fa-check"></i><b>4</b> Missing data</a><ul>
+<li class="chapter" data-level="" data-path="sec-missing.html"><a href="sec-missing.html#data-imputation-summary"><i class="fa fa-check"></i>Data imputation summary</a></li>
+<li class="chapter" data-level="4.1" data-path="sec-missing.html"><a href="sec-missing.html#mathematical-conversion"><i class="fa fa-check"></i><b>4.1</b> Mathematical conversion</a></li>
+<li class="chapter" data-level="4.2" data-path="sec-missing.html"><a href="sec-missing.html#partially-agreggation"><i class="fa fa-check"></i><b>4.2</b> Partially Agreggation</a></li>
+<li class="chapter" data-level="4.3" data-path="sec-missing.html"><a href="sec-missing.html#methods"><i class="fa fa-check"></i><b>4.3</b> Methods</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="sec-missing.html"><a href="sec-missing.html#helper-tables"><i class="fa fa-check"></i><b>4.3.1</b> Helper Tables</a></li>
+<li class="chapter" data-level="4.3.2" data-path="sec-missing.html"><a href="sec-missing.html#estimate-weight-per-unit"><i class="fa fa-check"></i><b>4.3.2</b> Estimate weight per unit</a></li>
+<li class="chapter" data-level="4.3.3" data-path="sec-missing.html"><a href="sec-missing.html#imputation-by-partially-reported-weight"><i class="fa fa-check"></i><b>4.3.3</b> Imputation by partially reported weight</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="sec-missing.html"><a href="sec-missing.html#functions-2"><i class="fa fa-check"></i><b>4.4</b> Functions</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="outlier-detection.html"><a href="outlier-detection.html"><i class="fa fa-check"></i><b>5</b> Outlier Detection</a><ul>
 <li class="chapter" data-level="5.1" data-path="outlier-detection.html"><a href="outlier-detection.html#data"><i class="fa fa-check"></i><b>5.1</b> Data</a></li>
 <li class="chapter" data-level="5.2" data-path="outlier-detection.html"><a href="outlier-detection.html#outlier-detection-in-the-aggregated-level"><i class="fa fa-check"></i><b>5.2</b> Outlier detection in the aggregated level</a><ul>
@@ -134,8 +148,52 @@
             <section class="normal" id="section-">
 <div id="sec:mapping" class="section level1">
 <h1><span class="header-section-number">3</span> Mapping trade data</h1>
-<p>In this section, we show how the mapping process is perfomed under the data built by the user. Commodity codes are reported in HS codes (Harmonized Commodity Description and Coding System). The codes are converted in FCL (FAO Commodity List) codes. This step is performed using some auxiliar tables stored in the SWS. In this step, all the mapping between HS and FCL code is stored.</p>
+<p>In this section, we show how the mapping process is performed under the data built by the user. Commodity codes are reported as HS codes (Harmonized Commodity Description and Coding System) or CN codes for European countries, which are mapped into ISSCFC (FAO Commodity List) codes. This step is performed using some auxiliar tables stored in the SWS.</p>
+<div id="definitions" class="section level2">
+<h2><span class="header-section-number">3.1</span> Definitions</h2>
+<ul>
+<li><p><strong>Mappings to be improved:</strong> Data from UNSD data source are often reported at the Tariff Line level, that is, the commodities are country-specific, and hence we have precise information about the description of those commodities. Nevertheless, the link between these codes and ISSCFC codes may be built using only the six first digits of the Tariff Line code, that is, we loss information, so that we may improve these mappings.</p></li>
+<li><p><strong>Unmapped</strong>: Commodity code without any correspondent ISSCFC code in the <a href="appendix-a.html#tab:dt-trade-map">Trade Map Table</a>, and also in the master files: <a href="appendix-a.html#tab:dt-hs-masterfile">HS Master file</a> for non-European countries and <a href="appendix-a.html#tab:dt-cn-masterfile">EUCN Master file</a> for European countries.</p></li>
+<li><p><strong>Scheda code:</strong> Internal identifier in Commodit Software (old system). Given the combination of a Country | Trade Flow | Fao Group | Tariff line it is generated a sequential code. This code format is the combination between the sequential code and the FAO Group resulting in <em>F.SSSS</em>, where <em>F</em> is the FAO Group and <em>SSSS</em> is the sequential code.</p></li>
+</ul>
+</div>
+<div id="mapping-module" class="section level2">
+<h2><span class="header-section-number">3.2</span> Mapping Module</h2>
+<p>In Figure <a href="sec-mapping.html#fig:mapping-flow">3.1</a>, we show the mapping module workflow. As all modules are connected , the user will be able to run the Mapping Module only for those countries-year that the data was built. Therefore, the main input data is the data table <a href="appendix-a.html#tab:dt-built-data"><code>fishtrade_data_built</code></a>, and hence the user must query this table by selecting the year and country through the <a href="https://hqlprsws1.hq.un.fao.org:3838/shinyFisheriesTrade_prod/">Fisheries Trade Tool</a>.</p>
+<ul>
+<li><strong>Inputs:</strong>
+<ul>
+<li><a href="appendix-a.html#tab:dt-built-data"><code>fishtrade_data_built</code></a></li>
+<li><a href="appendix-a.html#tab:dt-trade-map"><code>fishtrade_trade_map</code></a></li>
+<li><a href="appendix-a.html#tab:dt-hs-masterfile"><code>hs_masterfile</code></a></li>
+<li><a href="appendix-a.html#tab:dt-cn-masterfile"><code>cn_masterfile</code></a></li>
+</ul></li>
+<li><strong>Parameters:</strong> year, reporter</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:mapping-flow"></span>
+<img src="img/mapping_flow.svg" alt="Mapping Module workflow" width="80%" />
+<p class="caption">
+Figure 3.1: Mapping Module workflow
+</p>
+</div>
+<p>The <a href="appendix-a.html#tab:dt-trade-map">Trade Map Table</a> stores the mapping between Tariff Line and ISSCFC code, which are the mappings developed by the FIAS team. Therefore, we should try to map all data stored in the datatable <a href="appendix-a.html#tab:dt-built-data"><code>fishtrade_data_built</code></a> using this data table. Otherwise, if some commodities code could not be mapped, then we have to use the Master files mappings, which depends on whether the country is European or not.</p>
+<p>Figure <a href="sec-mapping.html#fig:mapping-flow">3.1</a> shows the back-end of the Mapping Module, while Figure <a href="sec-mapping.html#fig:mapping-module">3.2</a> shows the front-end. In the left side, we show the buttons which allows us to choose which country and year we wish to run the mapping module. While in the right side, we show the mapping tool with option to add, improve, and complete the mappings. The buttons “Save” and “Update” in the right side are the same that we show in Figure <a href="sec-mapping.html#fig:mapping-flow">3.1</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:mapping-module"></span>
+<img src="img/mapping_module.svg" alt="Mapping Module: fron-end" width="100%" />
+<p class="caption">
+Figure 3.2: Mapping Module: fron-end
+</p>
+</div>
+</div>
+<div id="functions-1" class="section level2">
+<h2><span class="header-section-number">3.3</span> Functions</h2>
+<ul>
+<li><a href="https://github.com/SWS-Methodology/faoFisheriesTrade/blob/master/shinyFisheriesTrade_prod/functions/run_mapping_module.R"><strong><code>run_mapping_module</code></strong></a>: It is the main function for the <strong>Mapping Module</strong>.</li>
+<li><a href="https://github.com/SWS-Methodology/faoFisheriesTrade/blob/master/shinyFisheriesTrade_prod/functions/get_cn_masterfile.R"><strong><code>get_cn_masterfile</code></strong></a>: It gets the CN masterfile to map European countries.</li>
+<li><a href="https://github.com/SWS-Methodology/faoFisheriesTrade/blob/master/shinyFisheriesTrade_prod/functions/get_hs_masterfile.R"><strong><code>get_hs_masterfile</code></strong></a>: It gets the HS masterfile to map non-European countries.</li>
+</ul>
 
+</div>
 </div>
             </section>
 
